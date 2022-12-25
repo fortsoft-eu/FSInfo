@@ -9,10 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FSInfo</RootNamespace>
     <AssemblyName>FSInfo</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <TargetFrameworkProfile />
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -37,7 +37,7 @@
     <StartupObject>FSInfo.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Icon.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -100,25 +100,25 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icon.ico" />
+    <None Include="Resources\Icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="OK.ico" />
+    <None Include="Resources\OK.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ShieldError.ico" />
+    <None Include="Resources\ShieldError.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ShieldWarning.ico" />
+    <None Include="Resources\ShieldWarning.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ShieldOK.ico" />
+    <None Include="Resources\ShieldOK.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ShieldQuestion.ico" />
+    <None Include="Resources\ShieldQuestion.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ShieldQuestionRed.ico" />
+    <None Include="Resources\ShieldQuestionRed.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

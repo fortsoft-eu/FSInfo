@@ -23,13 +23,13 @@ namespace FSInfo {
         private void BuildContextMenu() {
             richTextBox.ContextMenu = new ContextMenu();
             richTextBox.ContextMenu.MenuItems.Add(new MenuItem(Properties.Resources.MenuItemCopy, new EventHandler(Copy)));
-            richTextBox.ContextMenu.MenuItems.Add("-");
-            richTextBox.ContextMenu.MenuItems.Add(new MenuItem(Properties.Resources.MenuItemSelectAll, new EventHandler((sender, e) => { richTextBox.SelectAll(); })));
-            richTextBox.ContextMenu.MenuItems.Add("-");
-            richTextBox.ContextMenu.MenuItems.Add(new MenuItem(Properties.Resources.MenuItemWordWrap, new EventHandler((sender, e) => { richTextBox.WordWrap = !richTextBox.WordWrap; })));
-            richTextBox.ContextMenu.MenuItems.Add("-");
+            richTextBox.ContextMenu.MenuItems.Add(Constants.Hyphen.ToString());
+            richTextBox.ContextMenu.MenuItems.Add(new MenuItem(Properties.Resources.MenuItemSelectAll, new EventHandler((sender, e) => richTextBox.SelectAll())));
+            richTextBox.ContextMenu.MenuItems.Add(Constants.Hyphen.ToString());
+            richTextBox.ContextMenu.MenuItems.Add(new MenuItem(Properties.Resources.MenuItemWordWrap, new EventHandler((sender, e) => richTextBox.WordWrap = !richTextBox.WordWrap)));
+            richTextBox.ContextMenu.MenuItems.Add(Constants.Hyphen.ToString());
             richTextBox.ContextMenu.MenuItems.Add(new MenuItem(Properties.Resources.MenuItemAbout, new EventHandler(ShowAbout)));
-            richTextBox.ContextMenu.Popup += new EventHandler((sender, e) => { richTextBox.ContextMenu.MenuItems[4].Checked = richTextBox.WordWrap; });
+            richTextBox.ContextMenu.Popup += new EventHandler((sender, e) => richTextBox.ContextMenu.MenuItems[4].Checked = richTextBox.WordWrap);
         }
 
         private void Copy(object sender, EventArgs e) {
@@ -89,7 +89,7 @@ namespace FSInfo {
 
         private void OpenHelp(object sender, HelpEventArgs hlpevent) {
             try {
-                Process.Start(Properties.Resources.Website.TrimEnd('/').ToLowerInvariant() + '/' + Application.ProductName.ToLowerInvariant() + '/');
+                Process.Start(Properties.Resources.Website.TrimEnd(Constants.Slash).ToLowerInvariant() + Constants.Slash + Application.ProductName.ToLowerInvariant() + Constants.Slash);
             } catch (Exception exception) {
                 Debug.WriteLine(exception);
                 ErrorLog.WriteLine(exception);
