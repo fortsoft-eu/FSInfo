@@ -24,37 +24,17 @@
  * Version 1.1.1.0
  */
 
+using System;
+using System.Runtime.InteropServices;
+
 namespace FSInfo {
+    internal static class NativeMethods {
 
-    /// <summary>
-    /// Constants used in many places in the application.
-    /// </summary>
-    public static class Constants {
+        [DllImport("user32.dll")]
+        internal static extern bool EnableMenuItem(IntPtr hMenu, uint itemId, uint uEnable);
 
-        /// <summary>
-        /// Windows API constant.
-        /// </summary>
-        public const int SC_CLOSE = 0xF060;
 
-        /// <summary>
-        /// Characters used in many places in the application code.
-        /// </summary>
-        public const char Colon = ':';
-        public const char EnDash = '–';
-        public const char Hyphen = '-';
-        public const char Slash = '/';
-        public const char Space = ' ';
-        public const char VerticalTab = '\t';
-
-        /// <summary>
-        /// Strings used in many places in the application code.
-        /// </summary>
-        public const string ErrorLogEmptyString = "[Empty String]";
-        public const string ErrorLogErrorMessage = "ERROR MESSAGE";
-        public const string ErrorLogFileName = "Error.log";
-        public const string ErrorLogNull = "[null]";
-        public const string ErrorLogTimeFormat = "yyyy-MM-dd HH:mm:ss.fff";
-        public const string ErrorLogWhiteSpace = "[White Space]";
-        public const string ExtensionRtf = ".rtf";
+        [DllImport("user32.dll")]
+        internal static extern IntPtr GetSystemMenu(IntPtr hWnd, bool bRevert);
     }
 }

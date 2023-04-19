@@ -1,7 +1,8 @@
 ﻿/**
  * This is open-source software licensed under the terms of the MIT License.
  *
- * Copyright (c) 2020-2023 Petr Červinka - FortSoft <cervinka@fortsoft.eu>
+ * Copyright (c) 2023 Petr Červinka - FortSoft <cervinka@fortsoft.eu>
+ * Copyright (c) 2012 Hamid Sadeghian
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,40 +22,46 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  **
- * Version 1.1.1.0
+ * Version 1.1.0.0
  */
 
-namespace FSInfo {
+using System;
+using System.Runtime.InteropServices;
+
+namespace FortSoft.Controls {
 
     /// <summary>
-    /// Constants used in many places in the application.
+    /// Implements custom LinkLabel with proper system hand cursor.
     /// </summary>
-    public static class Constants {
+    public class LinkLabel : System.Windows.Forms.LinkLabel {
 
         /// <summary>
-        /// Windows API constant.
+        /// Constant value found in the WinUser.h header file.
         /// </summary>
-        public const int SC_CLOSE = 0xF060;
+        public const int IDC_HAND = 0x7F89;
 
         /// <summary>
-        /// Characters used in many places in the application code.
+        /// Import
         /// </summary>
-        public const char Colon = ':';
-        public const char EnDash = '–';
-        public const char Hyphen = '-';
-        public const char Slash = '/';
-        public const char Space = ' ';
-        public const char VerticalTab = '\t';
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        private static extern IntPtr LoadCursor(IntPtr hInstance, int lpCursorName);
 
         /// <summary>
-        /// Strings used in many places in the application code.
+        /// Proper system hand cursor.
         /// </summary>
-        public const string ErrorLogEmptyString = "[Empty String]";
-        public const string ErrorLogErrorMessage = "ERROR MESSAGE";
-        public const string ErrorLogFileName = "Error.log";
-        public const string ErrorLogNull = "[null]";
-        public const string ErrorLogTimeFormat = "yyyy-MM-dd HH:mm:ss.fff";
-        public const string ErrorLogWhiteSpace = "[White Space]";
-        public const string ExtensionRtf = ".rtf";
+        private static readonly System.Windows.Forms.Cursor SystemHandCursor =
+            new System.Windows.Forms.Cursor(LoadCursor(IntPtr.Zero, IDC_HAND));
+
+        /// <summary>
+        /// Overriding OnMouseMove method. If the base class decided to show the
+        /// ugly hand cursor show the system hand cursor instead.
+        /// </summary>
+        protected override void OnMouseMove(System.Windows.Forms.MouseEventArgs e) {
+            base.OnMouseMove(e);
+
+            if (OverrideCursor == System.Windows.Forms.Cursors.Hand) {
+                OverrideCursor = SystemHandCursor;
+            }
+        }
     }
 }

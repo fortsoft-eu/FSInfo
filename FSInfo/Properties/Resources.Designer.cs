@@ -296,11 +296,20 @@ namespace FSInfo.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Copy Link.
+        ///   Looks up a localized string similar to &amp;Copy URL.
         /// </summary>
-        internal static string MenuItemCopyLink {
+        internal static string MenuItemCopyUrl {
             get {
-                return ResourceManager.GetString("MenuItemCopyLink", resourceCulture);
+                return ResourceManager.GetString("MenuItemCopyUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &amp;Open in Default Browser....
+        /// </summary>
+        internal static string MenuItemOpenInDefaultBrowser {
+            get {
+                return ResourceManager.GetString("MenuItemOpenInDefaultBrowser", resourceCulture);
             }
         }
         

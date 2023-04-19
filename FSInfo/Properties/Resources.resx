@@ -196,8 +196,11 @@
   <data name="MenuItemCopyAbout" xml:space="preserve">
     <value>Copy &amp;About Text</value>
   </data>
-  <data name="MenuItemCopyLink" xml:space="preserve">
-    <value>&amp;Copy Link</value>
+  <data name="MenuItemCopyUrl" xml:space="preserve">
+    <value>&amp;Copy URL</value>
+  </data>
+  <data name="MenuItemOpenInDefaultBrowser" xml:space="preserve">
+    <value>&amp;Open in Default Browser...</value>
   </data>
   <data name="MenuItemSelectAll" xml:space="preserve">
     <value>Select &amp;All</value>
