@@ -15,7 +15,7 @@ application does not require installation on the target computer, it only
 requires **.NET Framework** to run.
 
 Target framework has been changed from **.NET Framework 4.6** in version
-**1.0.0.2** to **.NET Framework 4 Client Profile** in current version
-**1.1.0.0** for backward compatibility with **Windows XP Service Pack 3**.
+**1.0.0.2** to **.NET Framework 4 Client Profile** since version **1.1.0.0** for
+backward compatibility with **Windows XP Service Pack 3**.
 
 **FSInfo** is released under the **MIT license**.
