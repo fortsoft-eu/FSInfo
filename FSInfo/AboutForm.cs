@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  **
- * Version 1.1.1.0
+ * Version 1.1.1.1
  */
 
 using System;
@@ -35,10 +35,8 @@ using System.Windows.Forms;
 
 namespace FSInfo {
     public partial class AboutForm : Form {
-        private const int defaultWidth = 420;
-
-        private StringBuilder stringBuilder;
         private Form dialog;
+        private StringBuilder stringBuilder;
 
         public AboutForm() {
             Text = new StringBuilder()
@@ -59,7 +57,7 @@ namespace FSInfo {
 
             stringBuilder = new StringBuilder()
                 .AppendLine(Program.GetTitle())
-                .AppendLine(WordWrap(Properties.Resources.Description, labelProductInfo.Font, defaultWidth - 70))
+                .AppendLine(WordWrap(Properties.Resources.Description, labelProductInfo.Font, Constants.DefaultAboutFormWidth - 70))
                 .Append(Properties.Resources.LabelVersion)
                 .Append(Constants.Space)
                 .AppendLine(Application.ProductVersion);

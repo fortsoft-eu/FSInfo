@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  **
- * Version 1.1.1.0
+ * Version 1.1.1.1
  */
 
 namespace FSInfo {
@@ -30,6 +30,11 @@ namespace FSInfo {
     /// Constants used in many places in the application.
     /// </summary>
     public static class Constants {
+
+        /// <summary>
+        /// The default width of the old AboutForm.
+        /// </summary>
+        public const int DefaultAboutFormWidth = 420;
 
         /// <summary>
         /// Windows API constant.
